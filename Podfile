@@ -8,11 +8,11 @@ target 'AR-GunMan' do
   # Pods for AR-GunMan
  pod 'FSPagerView'
  pod 'PKHUD'
- pod 'Firebase/Analytics'
- pod 'Firebase/Core'
- pod 'Firebase/Firestore'
- pod 'FirebaseFirestoreSwift'
- pod 'Firebase/Messaging'
+ pod 'Firebase/Analytics', '~> 10.15.0'
+ pod 'Firebase/Core', '~> 10.15.0'
+ pod 'Firebase/Firestore', '~> 10.15.0'
+ pod 'FirebaseFirestoreSwift', '~> 10.15.0'
+ pod 'Firebase/Messaging', '~> 10.15.0'
  pod "CDAlertView"
  pod 'TransitionButton'
  pod 'LTMorphingLabel'
