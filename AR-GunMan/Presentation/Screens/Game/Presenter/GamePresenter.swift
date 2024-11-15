@@ -20,6 +20,8 @@ final class GamePresenter: PresenterType {
             let viewDidAppear: Observable<Void>
             let viewWillDisappear: Observable<Void>
             let weaponChangeButtonTapped: Observable<Void>
+            let fire: Observable<Void>
+            let reload: Observable<Void>
         }
         struct InputFromARContent {
             let targetHit: Observable<WeaponType>
@@ -116,10 +118,11 @@ final class GamePresenter: PresenterType {
         
         
         // 武器の発射関連の処理をハンドリングし、結果のアクションを生成
-        let weaponFireTrigger = DeviceMotionFilter.filterFireMotion(
-            accelerationUpdated: input.inputFromDeviceMotion.accelerationUpdated
-                .withLatestFrom(input.inputFromDeviceMotion.gyroUpdated) { ($0, $1) }
-        )
+//        let weaponFireTrigger = DeviceMotionFilter.filterFireMotion(
+//            accelerationUpdated: input.inputFromDeviceMotion.accelerationUpdated
+//                .withLatestFrom(input.inputFromDeviceMotion.gyroUpdated) { ($0, $1) }
+//        )
+        let weaponFireTrigger = input.inputFromView.fire
         let weaponFireOutput = weaponFireUseCase
             .generateOutput(from: .init(
                 weaponFiringTrigger: weaponFireTrigger.withLatestFrom(
@@ -139,9 +142,10 @@ final class GamePresenter: PresenterType {
                 state.bulletsCountRelay.asObservable()
             ) { ($0, $1) }
         )
-        let weaponReloadTrigger = DeviceMotionFilter.filterReloadMotion(
-            gyroUpdated: input.inputFromDeviceMotion.gyroUpdated
-        )
+//        let weaponReloadTrigger = DeviceMotionFilter.filterReloadMotion(
+//            gyroUpdated: input.inputFromDeviceMotion.gyroUpdated
+//        )
+        let weaponReloadTrigger = input.inputFromView.reload
         let combinedWeaponReloadTrigger = Observable
             .merge(
                 autoReloadTrigger,

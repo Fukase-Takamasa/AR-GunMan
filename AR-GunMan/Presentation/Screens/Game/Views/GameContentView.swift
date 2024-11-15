@@ -12,6 +12,8 @@ final class GameContentView: UIView {
     @IBOutlet weak var sightImageView: UIImageView!
     @IBOutlet weak var timeCountLabel: UILabel!
     @IBOutlet weak var weaponChangeButton: UIButton!
+    @IBOutlet weak var fireButton: UIButton!
+    @IBOutlet weak var reloadButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

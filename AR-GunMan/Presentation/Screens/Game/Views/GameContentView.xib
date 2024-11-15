@@ -9,9 +9,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameContentView" customModule="AR_GunMan" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameContentView" customModule="AR_GunManTests" customModuleProvider="target">
             <connections>
                 <outlet property="bulletsCountImageView" destination="gGO-hd-zD3" id="BeB-mO-njA"/>
+                <outlet property="fireButton" destination="d3I-D6-8xb" id="XcF-Hx-Xnb"/>
+                <outlet property="reloadButton" destination="nzk-hL-TJx" id="5vf-CR-9Ty"/>
                 <outlet property="sightImageView" destination="E7X-GG-OiZ" id="VtE-Gb-WHB"/>
                 <outlet property="timeCountLabel" destination="mzE-5N-AX6" id="Lcz-qT-60F"/>
                 <outlet property="weaponChangeButton" destination="8bi-fz-qwp" id="XN3-WZ-xEE"/>
@@ -67,6 +69,29 @@
                         <constraint firstAttribute="height" constant="70" id="wcy-PR-6c2"/>
                     </constraints>
                 </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JHZ-VN-QbE">
+                    <rect key="frame" x="681" y="230" width="100" height="110"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3I-D6-8xb">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="S5c-ij-61N"/>
+                                <constraint firstAttribute="width" constant="100" id="VtJ-ps-iek"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Fire"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzk-hL-TJx">
+                            <rect key="frame" x="0.0" y="70" width="100" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="QLN-Iq-gg7"/>
+                                <constraint firstAttribute="height" constant="40" id="cNC-Ms-Mn5"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Reload"/>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="zy3-Tg-hJI"/>
             <constraints>
@@ -75,8 +100,11 @@
                 <constraint firstItem="E7X-GG-OiZ" firstAttribute="centerX" secondItem="1KV-gi-ybZ" secondAttribute="centerX" id="DgR-nZ-h3W"/>
                 <constraint firstItem="mzE-5N-AX6" firstAttribute="leading" secondItem="zy3-Tg-hJI" secondAttribute="leading" constant="20" id="N10-Qt-3xX"/>
                 <constraint firstItem="E7X-GG-OiZ" firstAttribute="centerY" secondItem="1KV-gi-ybZ" secondAttribute="centerY" id="NAI-hh-5EU"/>
+                <constraint firstItem="zy3-Tg-hJI" firstAttribute="bottom" secondItem="JHZ-VN-QbE" secondAttribute="bottom" constant="32" id="O0L-8d-teO"/>
                 <constraint firstItem="mzE-5N-AX6" firstAttribute="top" secondItem="zy3-Tg-hJI" secondAttribute="top" constant="30" id="nnT-wx-GDG"/>
+                <constraint firstItem="JHZ-VN-QbE" firstAttribute="top" secondItem="8bi-fz-qwp" secondAttribute="bottom" constant="100" id="vFV-dc-Xbg"/>
                 <constraint firstItem="zy3-Tg-hJI" firstAttribute="trailing" secondItem="8bi-fz-qwp" secondAttribute="trailing" constant="12" id="vHi-R5-Xza"/>
+                <constraint firstItem="zy3-Tg-hJI" firstAttribute="trailing" secondItem="JHZ-VN-QbE" secondAttribute="trailing" constant="12" id="wxd-11-SEW"/>
                 <constraint firstItem="gGO-hd-zD3" firstAttribute="leading" secondItem="zy3-Tg-hJI" secondAttribute="leading" id="zYD-xr-lCs"/>
             </constraints>
             <point key="canvasLocation" x="-193" y="152"/>
@@ -86,7 +114,7 @@
         <image name="pistolSight" width="1500" height="1500"/>
         <image name="weaponSwitch" width="2048" height="2048"/>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

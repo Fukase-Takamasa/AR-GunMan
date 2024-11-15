@@ -37,7 +37,9 @@ class GameViewController: UIViewController {
                 viewWillAppear: rx.viewWillAppear,
                 viewDidAppear: rx.viewDidAppear,
                 viewWillDisappear: rx.viewWillDisappear,
-                weaponChangeButtonTapped: contentView.weaponChangeButton.rx.tap.asObservable()
+                weaponChangeButtonTapped: contentView.weaponChangeButton.rx.tap.asObservable(),
+                fire: contentView.fireButton.rx.tap.asObservable(),
+                reload: contentView.reloadButton.rx.tap.asObservable()
             ),
             inputFromARContent: .init(
                 targetHit: arContentController.targetHit
